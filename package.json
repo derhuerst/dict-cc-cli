@@ -3,7 +3,7 @@
 	"description":  "Offline dict.cc lookup in the command line.",
 	"version":      "0.1.0",
 	"main":         "index.js",
-	"files":        ["index.js"],
+	"files":        ["index.js", "data.ndjson"],
 	"author":       "Jannis R <mail@jannisr.de>",
 	"homepage":     "https://github.com/derhuerst/dict-cc-cli",
 	"repository":   "derhuerst/dict-cc-cli",
@@ -13,13 +13,13 @@
 	"engines" :     {"node": ">=6"},
 	"keywords":     ["dict.cc", "dictionary", "en", "de", "command line"],
 	"dependencies": {
-		"search-index": "^0.9.9",
-		"docproc": "^0.0.8",
-		"stream-sink": "^2.0.0"
+		"normalize-for-search": "^2.0.1",
+		"ndjson": "^1.5.0",
+		"stream-filter": "^2.1.0",
+		"word-regex": "^0.1.1"
 	},
 	"devDependencies": {
 		"binary-split": "^1.0.3",
-		"stream-filter": "^2.1.0",
 		"through2-map": "^3.0.0"
 	}
 }

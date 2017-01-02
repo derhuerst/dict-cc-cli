@@ -1,11 +1,11 @@
 'use strict'
 
-const searchIndex = require('search-index')
-const path = require('path')
 const fs = require('fs')
+const path = require('path')
 const split = require('binary-split')
 const filter = require('stream-filter')
 const map = require('through2-map')
+const ndjson = require('ndjson')
 
 const showError = (err) => {
 	console.error(err.message || err)
@@ -21,29 +21,15 @@ const isNotAComment = (row) => row.toString('utf8').slice(0, 1) !== '#'
 const hasNoWatermark = (row) => row.toString('utf8').indexOf(watermark) < 0
 const parseRow = (row) => {
 	const data = row.toString('utf8').trim().split(/\t+/)
-	return {
-		de: data[0], en: data[1], type: data[2]
-	}
+	return data.slice(0, 3)
 }
 
 
 
-searchIndex({
-	levelPath: path.join(__dirname, 'index.leveldb')
-}, (err, index) => {
-	if (err) return showError(err)
-
-	fs.createReadStream(path.join(__dirname, 'data.txt'))
-	.pipe(split())
-	.pipe(filter.obj(isNotAComment))
-	.pipe(filter.obj(hasNoWatermark))
-	.pipe(map.obj(parseRow))
-	.on('data', () => {
-		process.stdout.write('.')
-	})
-	.pipe(index.defaultPipeline())
-	.pipe(index.add())
-
-	.on('data', () => {})
-	.on('error', showError)
-})
+fs.createReadStream(path.join(__dirname, 'data.txt'))
+.pipe(split())
+.pipe(filter.obj(isNotAComment))
+.pipe(filter.obj(hasNoWatermark))
+.pipe(map.obj(parseRow))
+.pipe(ndjson.stringify())
+.pipe(fs.createWriteStream(path.join(__dirname, 'data.ndjson')))
