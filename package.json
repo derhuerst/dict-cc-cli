@@ -20,6 +20,7 @@
 	},
 	"devDependencies": {
 		"binary-split": "^1.0.3",
-		"through2-map": "^3.0.0"
+		"through2-map": "^3.0.0",
+		"ent": "^2.2.0"
 	}
 }
