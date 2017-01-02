@@ -13,9 +13,11 @@
 	"engines" :     {"node": ">=6"},
 	"keywords":     ["dict.cc", "dictionary", "en", "de", "command line"],
 	"dependencies": {
+		"search-index": "^0.9.9",
+		"docproc": "^0.0.8",
+		"stream-sink": "^2.0.0"
 	},
 	"devDependencies": {
-		"search-index": "^0.9.9",
 		"binary-split": "^1.0.3",
 		"stream-filter": "^2.1.0",
 		"through2-map": "^3.0.0"
