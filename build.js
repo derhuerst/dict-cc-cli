@@ -1,12 +1,12 @@
 'use strict'
 
-const fs = require('fs')
-const path = require('path')
 const ent = require('ent')
 const lines = require('binary-split')
 const filter = require('stream-filter')
 const map = require('through2-map')
 const ndjson = require('ndjson')
+const fs = require('fs')
+const path = require('path')
 
 const showError = (err) => {
 	console.error(err.message || err)
@@ -31,7 +31,7 @@ const parseRow = (row) => {
 
 
 
-fs.createReadStream(path.join(__dirname, 'data.txt'))
+process.stdin
 .pipe(lines())
 .pipe(filter.obj(isNotAComment))
 .pipe(filter.obj(hasNoWatermark))
