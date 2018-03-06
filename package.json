@@ -1,24 +1,39 @@
 {
-	"name":         "dict-cc-cli",
-	"description":  "Offline dict.cc lookup in the command line.",
-	"version":      "0.1.0",
-	"main":         "index.js",
-	"bin":          {"dict": "./bin.js"},
-	"files":        ["index.js", "data.ndjson", "bin.js", "build.js"],
-	"author":       "Jannis R <mail@jannisr.de>",
-	"homepage":     "https://github.com/derhuerst/dict-cc-cli",
-	"repository":   "derhuerst/dict-cc-cli",
-	"bugs":         "https://github.com/derhuerst/dict-cc-cli/issues",
-	"license":      "ISC",
+	"name": "dict-cc-cli",
+	"description": "Offline dict.cc lookup in the command line.",
+	"version": "0.1.0",
+	"main": "index.js",
+	"bin": {
+		"dict": "./bin.js"
+	},
+	"files": [
+		"index.js",
+		"data.ndjson",
+		"bin.js",
+		"build.js"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "https://github.com/derhuerst/dict-cc-cli",
+	"repository": "derhuerst/dict-cc-cli",
+	"bugs": "https://github.com/derhuerst/dict-cc-cli/issues",
+	"license": "ISC",
 	"preferGlobal": true,
-	"engines" :     {"node": ">=6"},
-	"keywords":     ["dict.cc", "dictionary", "en", "de", "command line"],
+	"engines": {
+		"node": ">=6"
+	},
+	"keywords": [
+		"dict.cc",
+		"dictionary",
+		"en",
+		"de",
+		"command line"
+	],
 	"dependencies": {
-		"normalize-for-search": "^2.0.1",
+		"chalk": "^2.3.2",
 		"ndjson": "^1.5.0",
+		"normalize-for-search": "^2.0.1",
 		"stream-filter": "^2.1.0",
-		"word-regex": "^0.1.1",
-		"chalk": "^1.1.3"
+		"word-regex": "^0.1.1"
 	},
 	"devDependencies": {
 		"binary-split": "^1.0.3",
