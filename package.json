@@ -4,7 +4,7 @@
 	"version":      "0.1.0",
 	"main":         "index.js",
 	"bin":          {"dict": "./bin.js"},
-	"files":        ["index.js", "data.ndjson", "bin.js"],
+	"files":        ["index.js", "data.ndjson", "bin.js", "build.js"],
 	"author":       "Jannis R <mail@jannisr.de>",
 	"homepage":     "https://github.com/derhuerst/dict-cc-cli",
 	"repository":   "derhuerst/dict-cc-cli",
