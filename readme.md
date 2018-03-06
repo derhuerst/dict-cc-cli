@@ -15,16 +15,25 @@ npm install -g dict-cc-cli
 ```
 
 
-## Usage
+### Build dictionary
 
 - [Create & download a dict.cc dump.](http://www1.dict.cc/translation_file_request.php?l=)
-- You will get an eMail with a link. Confirm by opening.
-- You will get another eMail with another link.
-- `curl -s '<link>' > data.zip`
-- `unzip data.zip && rm data.zip`
+- You will get an e-mail with a link. Confirm by opening.
+- You will get another e-mail with another link.
+- `cd` into the `dict-cc-cli` directory, e.g. `usr/local/lib/node_modules/dict-cc-cli`.
+- `curl -s '<link>' > data.zip`.
+- `unzip data.zip && rm data.zip`.
+- `npm install` to install build dependencies.
 - `cat cbgoogdbsk-80153119142-e8iuei.txt | node build.js e8iuei`.
 
 Note that the exact file name & code will be different.
+
+
+## Usage
+
+```shell
+dict <query string>
+```
 
 
 ## Contributing
