@@ -8,25 +8,34 @@
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/dict-cc-cli.svg)
 
 
-## Installing & building the dictionary
+## Installing
+
+```shell
+npm install -g dict-cc-cli
+```
+
+
+### Building the dictionary
 
 - [Create & download a dict.cc dump.](http://www1.dict.cc/translation_file_request.php?l=)
 - You will get an e-mail with a link. Confirm by opening.
 - You will get another e-mail with another link.
-- `git clone https://github.com/derhuerst/dict-cc-cli.git dict-cc-cli`.
-- `cd dict-cc-cli`.
-- `curl -s '<link>' > data.zip`.
-- `unzip data.zip && rm data.zip`.
-- `npm install` to install build dependencies.
-- `cat cbgoogdbsk-80153119142-e8iuei.txt | node build.js e8iuei`.
 
-Note that the exact file name & code will be different.
+```shell
+curl -s '<link>' > data.zip
+
+unzip data.zip && rm data.zip
+
+cat path-to-dump.txt | dict-cc-import <watermark>
+```
+
+The dump file will be named something like `cmfkobmobk-18522520842-e6u765.txt`, where the watermark is `e6u765`.
 
 
 ## Usage
 
 ```shell
-./bin.js <query string>
+dict-cc <query string>
 ```
 
 
