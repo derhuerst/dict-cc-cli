@@ -1,7 +1,7 @@
 {
 	"name": "dict-cc-cli",
 	"description": "Offline dict.cc lookup in the command line.",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"main": "index.js",
 	"bin": {
 		"dict-cc": "./bin.js",
@@ -16,7 +16,7 @@
 	"homepage": "https://github.com/derhuerst/dict-cc-cli",
 	"repository": "derhuerst/dict-cc-cli",
 	"bugs": "https://github.com/derhuerst/dict-cc-cli/issues",
-	"license": "ISC",
+	"license": "GPL-3.0-or-later",
 	"preferGlobal": true,
 	"engines": {
 		"node": ">=6"
