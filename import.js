@@ -1,6 +1,33 @@
 #!/usr/bin/env node
 'use strict'
 
+const mri = require('mri')
+const pkg = require('./package.json')
+
+const argv = mri(process.argv.slice(2), {
+	boolean: ['help', 'h', 'version', 'v']
+})
+
+if (argv.help || argv.h) {
+	process.stdout.write(`
+Usage:
+    dict-cc-import <watermark>
+Examples:
+    cat cmfkobmobk-18522520842-e6u765.txt | dict-cc-import e6u765
+\n`)
+	process.exit(0)
+}
+
+if (argv.version || argv.v) {
+	process.stdout.write(`dict-cc-cli v${pkg.version}\n`)
+	process.exit(0)
+}
+
+const showError = (err) => {
+	console.error(err.message || err)
+	process.exit(1)
+}
+
 const ent = require('ent')
 const lines = require('binary-split')
 const filter = require('stream-filter')
@@ -9,15 +36,8 @@ const ndjson = require('ndjson')
 const fs = require('fs')
 const path = require('path')
 
-const showError = (err) => {
-	console.error(err.message || err)
-	process.exit(1)
-}
-
-
-
-const watermark = process.argv[2].trim()
-if (!watermark) showError('Missing water mark.')
+const watermark = argv._[0]
+if (!watermark) showError('Missing watermark.')
 
 const split = (row) => row.toString('utf8').trim().split(/\t+/)
 
@@ -29,8 +49,6 @@ const parseRow = (row) => {
 	const [de, en, type] = split(row)
 	return [ent.decode(de), ent.decode(en), type]
 }
-
-
 
 process.stdin
 .pipe(lines())
