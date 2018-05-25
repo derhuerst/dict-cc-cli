@@ -1,7 +1,7 @@
 {
 	"name": "dict-cc-cli",
 	"description": "Offline dict.cc lookup in the command line.",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"main": "index.js",
 	"bin": {
 		"dict-cc": "./bin.js",
@@ -10,7 +10,7 @@
 	"files": [
 		"index.js",
 		"bin.js",
-		"build.js"
+		"import.js"
 	],
 	"author": "Jannis R <mail@jannisr.de>",
 	"homepage": "https://github.com/derhuerst/dict-cc-cli",
