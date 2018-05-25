@@ -1,7 +1,7 @@
 {
 	"name": "dict-cc-cli",
 	"description": "Offline dict.cc lookup in the command line.",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"main": "index.js",
 	"bin": {
 		"dict-cc": "./bin.js",
