@@ -10,9 +10,13 @@ const argv = mri(process.argv.slice(2), {
 
 if (argv.help || argv.h) {
 	process.stdout.write(`
-Usage:
-    dict-cc-import <watermark>
-Examples:
+1. Request & download a dict.cc dump.
+    - Go to http://www1.dict.cc/translation_file_request.php?l=
+    - You will get an e-mail with a link. Confirm by opening.
+    - Then, you will get another e-mail with another link.
+2. Unzip the dump. There will be a file inside, named like
+    cmfkobmobk-18522520842-e6u765.txt, where the watermark is e6u765.
+3. Import the data:
     cat cmfkobmobk-18522520842-e6u765.txt | dict-cc-import e6u765
 \n`)
 	process.exit(0)
