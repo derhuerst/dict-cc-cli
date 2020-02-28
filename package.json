@@ -1,7 +1,7 @@
 {
 	"name": "dict-cc-cli",
 	"description": "Offline dict.cc lookup in the command line.",
-	"version": "2.0.2",
+	"version": "3.0.0",
 	"main": "index.js",
 	"bin": {
 		"dict-cc": "./bin.js",
@@ -19,7 +19,7 @@
 	"license": "GPL-3.0-or-later",
 	"preferGlobal": true,
 	"engines": {
-		"node": ">=6"
+		"node": ">=10"
 	},
 	"keywords": [
 		"dict.cc",
@@ -30,7 +30,7 @@
 	],
 	"dependencies": {
 		"binary-split": "^1.0.3",
-		"chalk": "^2.3.2",
+		"chalk": "^3.0.0",
 		"ent": "^2.2.0",
 		"mri": "^1.1.0",
 		"ndjson": "^1.5.0",
